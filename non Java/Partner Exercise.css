@@ -1,0 +1,15 @@
+.one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    border: 30px;
+    border-color: black;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+}
+li{
+    margin: 3px;
+}

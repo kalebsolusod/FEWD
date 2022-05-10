@@ -1,0 +1,19 @@
+div {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 5vh ;
+
+
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}

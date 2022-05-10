@@ -1,0 +1,28 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: saddlebrown;
+    background-color: blanchedalmond;
+}
+
+.aa {
+    background-color: black;
+    padding: 30px;
+}
+section {
+    font-family: arial;
+}
+li{
+    color: rgb(145, 53, 0);
+    font-size: 50px;
+}
+ul{
+    background-color: beige;
+}
+.hp-issue-index{
+    color: rgb(104, 75, 37);
+}
+img{
+    border: 8mm ridge #522903;
+    border: radius 20px;
+    width: 50mm; height: 100mm;
+}

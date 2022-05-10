@@ -1,0 +1,224 @@
+body {
+    font-family: 'Lora', serif;
+    width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    text-align: center;
+  }
+  
+  .text-time {
+    text-align: center;
+  }
+  
+  .button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .no-transition {
+    background-color: lightgreen;
+    color: black;
+  }
+  
+  .no-transition:hover {
+    background-color: lightblue;
+    color: black;
+  }
+  
+  .subtle-button {
+    background-color: red;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .subtle-button:hover {
+    background-color: orange;
+  }
+  
+  .slow-button {
+    background-color: pink;
+    color: black;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .slow-button:hover {
+    background-color: yellow;
+    color: black;
+  }
+  
+  .ease-in-button {
+    background-color: blueviolet;
+    transition: 0.7s ease-in;
+  }
+  .ease-in-button:hover {
+    background-color: aqua;
+    color: black;
+  }
+  
+  .normal-gradient {
+    background-image: linear-gradient(red, orange);
+    height: 200px;
+    margin: 10px;
+  }
+  .sideways-gradient {
+    background-image: linear-gradient(
+      to left, 
+      rosybrown, #f06d06
+    );
+    height: 200px;
+    margin: 10px;
+  }
+  .multi-stop-gradient {
+    background-image: linear-gradient(
+      to right, 
+      rgb(231,124,76), 
+      rgb(217,219,51), 
+      rgb(75,198,209),
+      rgb(29,65,128)
+    );
+    height: 200px;
+    margin: 10px;
+  }
+  
+  /* Slanty box */
+  .twisty-box-1 {
+    background-color: burlywood;
+    border: 1px solid black;
+    height: 300px;
+    margin: 0 auto;
+    transform: rotate(153deg);
+    width: 300px;
+  }
+  .twisty-box-2 {
+    background-color: cadetblue;
+    border: 1px solid black;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    transform: rotate(278deg);
+    width: 300px;
+  }
+  
+  /* Moving boxes */
+  .box-of-boxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .moving-box {
+    background-color: darkmagenta;
+    color: white;
+    height: 100px;
+    animation: skew 3s infinite;
+    transform: skew(20deg);
+    animation-direction: alternate;
+    margin: 10px;
+    width: 100px;
+  }
+  @keyframes skew {
+    0% {
+      transform: skewX(20deg);
+    }
+    100% {
+      transform: skewX(-20deg);
+    }
+  }
+  
+  .spinning-box {
+    background-color: darkslateblue;
+    color: white;
+    height: 100px;
+    animation: roll 3s infinite;
+    transform: rotate(30deg);
+    margin: 10px;
+    width: 100px;
+  }
+  
+  @keyframes roll {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .disappearing-box {
+    animation: houdini 2s infinite alternate;
+    display: block; /* I bet you forgot img is an inline element didn't you? */
+    margin: 50px auto;
+    opacity: 0;
+  }
+  
+  @keyframes houdini {
+    from {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(-25px);
+      opacity: 1;
+    }
+  }
+  
+  .bounce-box {
+    animation: bounce 1s infinite alternate;
+    display: block; /* I bet you forgot img is an inline element didn't you? */
+    margin: 50px auto;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-25px);
+    }
+  }
+  
+  .hamburger-box {
+    display: block; /* I bet you forgot img is an inline element didn't you? */
+    margin: 50px auto;
+    transition: 0.5s ease-in-out;
+  }
+  
+  #big-menu {
+    background-color: rgba(7,34,53,1);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    overflow-y: scroll;
+    padding: 15px 30px;
+    position: fixed;
+    transition: all 0.35s ease-in-out;
+    transform: translateX(100%);
+    z-index: 10;
+  }
+  #big-menu.toggle-open {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  #big-menu a, #big-menu a:focus, #big-menu a:visited {
+    color: white;
+    display: block;
+    font-size: 50px;
+    margin: 25px auto;
+    text-align: center;
+    text-decoration: none;
+  }
+  #big-menu-close {
+    background-color: white;
+    color: darkred;
+  }

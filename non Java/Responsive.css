@@ -1,0 +1,143 @@
+body {
+    box-sizing: border-box; /* remember what this does? */
+    margin: 25px;
+  }
+  
+  /* HEADER */
+  /* Repeat lets us reduce some code we're writing */
+  /* Explore...https://alligator.io/css/css-grid-layout-repeat-notation/ */
+  .responsive-container {
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: 1fr; 
+    padding: 0;
+    margin-bottom: 25px;
+  }
+  
+  @media (min-width: 500px) {
+    .responsive-container {
+      grid-template-columns: repeat(4, 1fr); 
+    
+    }
+  }
+  
+  .responsive-container li {
+    background-color: lightblue;
+    height: 80px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* MAIN SECTION */
+  .main-container {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr;
+  }
+  
+  /* Notice I made my media queries match - super easy adjustment*/
+  @media (min-width: 500px) { 
+    .main-container {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  .content-container {
+    background-color: #cbf2a8;
+  }
+  
+  /* For floated images like this, you sometimes have to switch the layout method */
+  /* Floats don't work in mobile phones really at all */
+  /* I used a responsive image technique for mobile, floats above that */
+  /* With media queries this is doable, and preferable even */
+  .floated-image {
+    display: block;
+    height: auto;
+    margin: 15px 0;
+    max-width: 100%;
+  }
+  
+  /* Just adjust your browser window, where does the text next to the image look bad? */
+  /* I thought it was under 700px, I so made a media query there */
+  @media (min-width: 700px) { 
+    .floated-image {
+      display: inline;
+      float: right;
+      margin: 0 0 10px 10px;
+      width: 300px;
+    }
+  }
+  
+  aside {
+    background-color: lightgray;
+  }
+  
+  /* a responsive image - think about why this works... */
+  aside img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* SECONDARY SECTION */
+  .secondary-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  /* I can use compound media queries to create ranges - this would be a tablet-ish range*/
+  /* With fixed width containers, you have to be more explicit with your responsive styles */
+  /* More laborious but you get the same place in the end */
+  /* Compare with grid, there is no right answer - situational awareness is key */
+  @media (min-width: 500px) and (max-width: 850px) {
+    .secondary-container {
+      max-width: 100%;
+    }
+  }
+  
+  /* Covers all larger screens */
+  @media (min-width: 850px) {
+    .secondary-container {
+      flex-wrap: nowrap; /* puts them back in a line */
+      width: 800px; /* gives the layout a limit on big screens  */
+    }
+  }
+  
+  /* What are the pros / cons of using fixed widths for a responsive design? */
+  .secondary-container div {
+    align-items: center;
+    background-color: rebeccapurple;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+    width: 150px;
+    padding: 25px;
+  }
+  
+  /* FOOTER */
+  .footer-container {
+    align-items: center; /* Note that the axes switch, so align-items now controls horizontal center */
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+  }
+  
+  /* The most common kind of flexbox responsive layout, just flip flex-direction */
+  @media (min-width: 500px) {
+    .footer-container {
+      flex-direction: row;
+    background-color: red;
+    }
+  }
+  
+  /* What does percentage width flexbox do in responsive design vs. fixed width above? */
+  .footer-container section {
+    background-color: pink;
+    height: 60px;
+    margin: 25px;
+    width: calc(33.3% - 25px); /* calc is a good way to mix units, why am I doing this? */
+  }
+  
